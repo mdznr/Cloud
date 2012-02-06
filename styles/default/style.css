@@ -1,0 +1,279 @@
+* {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #eef6f9;
+	font: 12px/2 "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	color: #d6e5ec;
+}
+
+#cloud {
+	display: block;
+	position: absolute;
+	width: 430px;
+	height: 320px;
+	margin: auto;
+	padding: auto;
+	top: 41px;
+	left: 50%;
+	margin-left: -215px;
+	z-index: 1;
+}
+
+#lock {
+	width: 38px;
+	height: 47px;
+	display: inline-block;
+	position: absolute;
+	top: 164px;
+	left: 196px;
+	line-height: 0px;
+}
+
+#login {
+	width: 225px;
+	height: 89px;
+	display: inline-block;
+	position: absolute;
+	top: 166px;
+	left: 107px;
+	padding-left: 0px;
+}
+
+img {
+	border: none;
+	padding: none;
+	margin: none;
+}
+
+#login input:focus {
+	border: 0px solid #c0e1f4;
+	outline: none;
+}
+
+#login input {
+	color: #a5b5c2;
+	background: none;
+	font: 18px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	padding: 5px;
+	padding-left: 18px;
+	margin-bottom: 12px;
+	width: 159px;
+	height: 35px;
+	border: 0px solid #c0e1f4;
+	margin: 0px;
+}
+
+.submit {
+	display: block;
+	position: absolute;
+	top: 17px;
+	left: 178px;
+}
+
+#locktop, #lockbottom {
+	margin: 0px;
+	top: 0px;
+}
+
+#locktop {
+	margin-bottom: -3px;
+}
+
+::selection, input::selection {
+	background: #d6e3ec;
+}
+
+::-moz-selection, input::-moz-selection {
+	background: #d6e3ec;
+}
+
+#upload {
+	height: 75px;
+	width: 57px;
+	max-height: 75px;
+	max-width: 57px;
+	background: url(uploadfile.jpg) no-repeat center center;
+	display: inline-block;
+	position: absolute;
+	top: 155px;
+	left: 187px;
+}
+
+#uploadarrow {
+	height: 75px;
+	width: 75px;
+	max-height: 75px;
+	max-width: 75px;
+	background: url(uploadarrow.jpg) no-repeat left center;
+	position: absolute;
+	left: -17px;
+	top: 0px;
+}
+
+input[type="file"] {
+	position: relative;
+	opacity: 0;
+	height: 95px;
+	width: 90px;
+	background-color: #fff;
+	top: -12.5px;
+	left: -2.5px;
+}
+
+#listing {
+	position: absolute;
+	padding: auto;
+	top: 380px;
+	left: 50%;
+	display: block;
+	width: 430px;
+	max-width: 430px;
+	font-stretch: normal;
+	font: 300 11px/32px "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+	margin-right: auto;
+	margin-top: auto;
+	margin-left: -215px;
+}
+
+ul {
+	position: absolute;
+	padding-bottom: 51px;
+}
+
+#file, .header {
+	background: #eef6f9;
+}
+
+#file {
+	background: #eef6f9 url(generic.png) no-repeat 19px 8px;
+}
+
+#list2 {
+	z-index: -1;
+}
+
+li.header span.name,
+li.header span.time,
+li.header {
+	color: #cfdfe5;
+	font-size: 9px;
+	text-transform: uppercase;
+}
+
+li.header span.time {
+	float: right;
+}
+
+li {
+	display: block;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-bottom: 1px solid #d6e5ec;
+	box-shadow: #ffffff 0 1px 0;
+	margin-bottom: 1px;
+	-webkit-transition-duration: 200ms;
+}
+
+#filext {
+	background: #a5b5c2 url(delete.jpg) no-repeat 21px 7px;
+}
+
+#filext span, #filext a {
+	color: #eff6fa;
+	text-shadow: #7a8f9f 0 1px 0;
+	-webkit-transition-duration: 200ms;
+}
+
+span {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	color: #cfdfe5;
+	text-shadow: #ffffff 0 1px 0;
+}
+
+span.name, span.third {
+	width: 272px;
+	-webkit-transition-duration: 100ms;
+}
+
+#file span.name, #filext span.third {
+	padding-left: 8px;
+}
+
+span.time, span.size {
+	text-align: right;
+	width: 90px;
+	-webkit-transition-duration: 100ms;
+}
+
+a {
+	color: #afbec8;
+	text-decoration: none;
+	-webkit-transition-duration: 450ms;
+	text-shadow: #ffffff 0 1px 0;
+	-webkit-transition-duration: 100ms;
+}
+
+#message {
+	display: none;
+	text-align: center;
+	background-color: #fff;
+	z-index: 2;
+}
+
+#cldbk span{
+	position: absolute;
+	display: block;
+	display: block;
+	background: #d5e2eb;
+	margin:20px auto;
+	border: 20px solid #d5e2eb;
+	left: 50%;
+}
+
+.circle {
+	width: 175px;
+	height: 175px;
+	-moz-border-radius: 107.5px;
+	-webkit-border-radius: 107.5px;
+}
+
+.lcircle {
+	width: 195px;
+	height: 195px;
+	-moz-border-radius: 117.5px;
+	-webkit-border-radius: 117.5px;
+}
+
+.rectangle {
+	width: 175px;
+	height: 150px;
+}
+
+#top {
+	margin-left: -122.5px !important;
+	top: 24px;
+}
+
+#left {
+	margin-left: -215.5px !important;
+	top: 124px;
+	z-index: -1;
+}
+
+#right {
+	top: 104px;
+	margin-left: -20px !important;
+	z-index: -1;
+}
+
+#rectangle {
+	margin-left: -113.5px !important;
+	top: 149px;
+	z-index: -1;
+}

@@ -1,10 +1,12 @@
 <?php
 
-if ($_COOKIE["Cloud"]){
+if ($_COOKIE["Cloud"]){	//	If they have the proper cookie, they will redirect into the members area
 	header("Location: members.php");
 }
-mysql_connect("localhost", "user", "pass") or die(mysql_error());
-mysql_select_db("db") or die(mysqlerror());
+
+include "config.php"; // For use with the two lines below
+mysql_connect($location, $username, $password) or die(mysql_error());
+mysql_select_db($database) or die(mysqlerror());
 
 if ($_POST['password'] && $_POST['username']) {
  	$check = mysql_query("SELECT password FROM users WHERE username = '".$_POST['username']."'")or die(mysql_error());

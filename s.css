@@ -1,0 +1,54 @@
+* {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #eef6f9;
+	font: 12px/4.236em "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	color: #a5b5c2;
+	width: 29.03em;
+	margin: auto;
+	margin-top: 6.853em;
+}
+
+h3 {
+	font-size: 2.618em;
+	text-align: center;
+	margin-bottom: .618em;
+}
+
+h2 {
+	font-size: 1.618em;
+}
+
+h1 {
+	font-size: 1em;
+	font-weight: normal;
+}
+
+input {
+	font-size: 1em;
+	color: #a5b5c2;
+	padding: 4px;
+	margin-left: 1em;
+	border: 1px solid #ddd;
+	background-image: linear-gradient(bottom, rgb(255,255,255) 50%, rgb(250,250,250) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(255,255,255) 50%, rgb(250,250,250) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 50%, rgb(250,250,250) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 50%, rgb(250,250,250) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 50%, rgb(250,250,250) 100%);
+	background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.5, rgb(255,255,255)),
+	color-stop(1, rgb(250,250,250))
+);
+}
+
+input:focus {
+	border: 1px solid #a5b5c2;
+	outline: none;
+}

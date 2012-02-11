@@ -1,6 +1,6 @@
 <?php
 
-if (!$_COOKIE["Cloud"]) { header('Location: index.php'); }
+if (!$_COOKIE["Cloud"]) { header('Location: index.php'); }	// Looks like they don't have a cookie, send them back to log in.
 
 function uploadFile(){
 	$file = $_FILES['file_upload'];	// This is our file variable

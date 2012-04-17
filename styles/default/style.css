@@ -175,7 +175,7 @@ li {
 	border-bottom: 1px solid #d6e5ec;
 	box-shadow: #ffffff 0 1px 0;
 	margin-bottom: 1px;
-	-webkit-transition-duration: 200ms;
+	-webkit-transition: opacity 200ms;
 }
 
 #filext {
@@ -185,7 +185,8 @@ li {
 #filext span, #filext a {
 	color: #eff6fa;
 	text-shadow: #7a8f9f 0 1px 0;
-	-webkit-transition-duration: 200ms;
+	-webkit-transition-duration: color 200ms ease;
+	-webkit-transition-duration: text-shadow 200ms ease;
 }
 
 span {
@@ -198,7 +199,7 @@ span {
 
 span.name, span.third {
 	width: 272px;
-	-webkit-transition-duration: 100ms;
+	/* -webkit-transition-duration: 100ms; */
 }
 
 #file span.name, #filext span.third {
@@ -208,15 +209,15 @@ span.name, span.third {
 span.time, span.size {
 	text-align: right;
 	width: 90px;
-	-webkit-transition-duration: 100ms;
+	/* -webkit-transition-duration: 100ms; */
 }
 
 a {
 	color: #afbec8;
 	text-decoration: none;
-	-webkit-transition-duration: 450ms;
+	-webkit-transition: text-decoration 450ms ease;
 	text-shadow: #ffffff 0 1px 0;
-	-webkit-transition-duration: 100ms;
+	-webkit-transition: text-shadow 100ms ease;
 }
 
 #message {

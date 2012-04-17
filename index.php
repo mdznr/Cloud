@@ -4,7 +4,7 @@ if ($_COOKIE["Cloud"]){	//	If they have the proper cookie, they will redirect in
 	header("Location: members.php");
 }
 
-include "config.php"; // For use with the two lines below
+require "config.php"; // For use with the two lines below
 mysql_connect($location, $username, $password) or die(mysql_error());
 mysql_select_db($database) or die(mysqlerror());
 

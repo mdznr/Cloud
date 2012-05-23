@@ -8,24 +8,24 @@ require "config.php"; // For use with the two lines below
 mysql_connect($location, $username, $password) or die(mysql_error());
 mysql_select_db($database) or die(mysqlerror());
 
-if ($_POST['password'] && $_POST['username']) {
- 	$check = mysql_query("SELECT password FROM users WHERE username = '".$_POST['username']."'")or die(mysql_error());
+if ( $_POST["password"] && $_POST["username"] ) {
+ 	$check = mysql_query("SELECT password FROM users WHERE username = '".$_POST["username"]."'")or die(mysql_error());
 	$info = mysql_fetch_row($check);
 	if (!$info[0]){
 		$invalid = 1;
 	}
-	$password = stripslashes($_POST['password']);	
+	$password = stripslashes($_POST["password"]);	
 	if (sha1($password) !== $info[0]) {
 		$invalid = 1;
 	}
 	else {
 	header("Location: members.php");
-	setcookie("Cloud", $_POST['username'], time()+3600);
+	setcookie("Cloud", $_POST["username"], time()+3600);
 	return;
 	}
 }
 
-if (!empty($_POST['password']) || !empty($_POST['username'])) { $invalid = 1; }
+if ( !empty($_POST["password"]) || !empty($_POST["username:"]) ) { $invalid = 1; }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -50,7 +50,7 @@ if (!empty($_POST['password']) || !empty($_POST['username'])) { $invalid = 1; }
 			$("#lock").animate({"top": "-=73px"}, 0);
 			$("#login,#submitform").fadeToggle(0, "linear");
 			lockState = false; /* says lock is in unlocked state */
-			$('#cloud,#cldbk,#submitform').effect('shake', { times:3 , distance:5 }, 50);
+			$("#cloud,#cldbk,#submitform").effect("shake", { times:3 , distance:5 }, 50);
 			$("input#username").focus();
 		}
 	<?php } 
@@ -68,7 +68,7 @@ if (!empty($_POST['password']) || !empty($_POST['username'])) { $invalid = 1; }
 	} ?>
 	
 	function shake() {
-		$('#cloud').effect('shake', { times:3 , distance:5 }, 50);
+		$("#cloud").effect("shake", { times:3 , distance:5 }, 50);
 	}
 	
 	function mover() {
@@ -88,8 +88,8 @@ if (!empty($_POST['password']) || !empty($_POST['username'])) { $invalid = 1; }
 		}
 	}
 	$(document).ready(function() {
-    $('input#username').focus();
-});
+		$("input#username").focus();
+	});
 </script>
 </head>
 <body>

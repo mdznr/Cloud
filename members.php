@@ -1,35 +1,35 @@
 <?php
 
-if (!$_COOKIE["Cloud"]) { header('Location: index.php'); }	// Looks like they don't have a cookie, send them back to log in.
+if ( !$_COOKIE["Cloud"] ) { header("Location: index.php"); }	// Looks like they don't have a cookie, send them back to log in.
 
 function uploadFile(){
-	$file = $_FILES['file_upload'];	// This is our file variable
-	$name = $file['name'];
-	$tmp = $file['tmp_name'];
-	$size = $file['size'];
-	$type = $file['type'];
-	$max_size = 50 * 1024 * 1024;	// 50 megabytes 
-	$upload_dir = 'uploads/';
+	$file = $_FILES["file_upload"];	//	This is our file variable
+	$name = $file["name"];
+	$tmp = $file["tmp_name"];
+	$size = $file["size"];
+	$type = $file["type"];
+	$max_size = 50 * 1024 * 1024;	//	50 megabytes 
+	$upload_dir = "uploads/";		//	Upload directory
 	
-	if(($size > 0) && ($type !== "text/php")) {
-		if(!is_dir($upload_dir)){ echo $upload_dir . ' is not a directory'; }
-		else if($size > $max_size){ echo 'The file you are trying to upload is too big.'; }
-		else{
-			if(!is_uploaded_file($tmp)){ echo 'Could not upload your file at this time, please try again'; }	
-			else{
-				if(!move_uploaded_file($tmp, $upload_dir . $name)){ echo 'Could not move the uploaded file.'; }
-				else{ $message = $name . " was successfully uploaded!"; }	
+	if ( ($size > 0) && ($type !== "text/php") ) {
+		if( !is_dir($upload_dir) ) { echo $upload_dir . " is not a directory"; }
+		else if ( $size > $max_size ) { echo "The file you are trying to upload is too big."; }
+		else {
+			if ( !is_uploaded_file($tmp) ) { echo "Could not upload your file at this time, please try again"; }	
+			else {
+				if ( !move_uploaded_file($tmp, $upload_dir . $name) ) { echo "Could not move the uploaded file."; }
+				else { $message = $name . " was successfully uploaded!"; }	
 			}
 		}
 	}
-	elseif($type === "text/php"){ echo "You cannot upload that file here."; }
+	else if ( $type === "text/php" ) { echo "You cannot upload that file here."; }
 }
 
 function format_size($size) {
     $index = array("B", "kB", "MB", "GB", "TB");
-    $unit = floor(log($size, 10) / 3);
-    $power = pow(10, $unit * 3);
-    return round($size / $power, 1) . " " . $index[$unit];
+    $unit = floor( log($size, 10) / 3 );
+    $power = pow( 10, $unit * 3 );
+    return round( $size / $power, 1 ) . " " . $index[$unit];
 }
 
 function time_ago($timestamp, $recursive = 0) {
@@ -37,24 +37,24 @@ function time_ago($timestamp, $recursive = 0) {
 	$difference = $current_time - $timestamp;
 	$periods = array("second", "minute", "hour", "day", "week", "month", "year", "decade");
 	$lengths = array(1, 60, 3600, 86400, 604800, 2630880, 31570560, 315705600);
-	for ($val = sizeof($lengths) - 1; ($val >= 0) && (($number = $difference / $lengths[$val]) <= 1); $val--);
-	if ($val < 0) $val = 0;
-	$new_time = $current_time - ($difference % $lengths[$val]);
+	for ( $val = sizeof($lengths) - 1; ($val >= 0) && ( ($number = $difference / $lengths[$val]) <= 1) ; $val-- );
+	if ( $val < 0 ) $val = 0;
+	$new_time = $current_time - ( $difference % $lengths[$val] );
 	$number = floor($number);
 	if($number != 1) {
 		$periods[$val] .= "s";
 	}
 	$text = sprintf("%d %s ", $number, $periods[$val]);   
 	
-	if (($recursive == 1) && ($val >= 1) && (($current_time - $new_time) > 0)) {
+	if ( ($recursive == 1) && ($val >= 1) && (($current_time - $new_time) > 0) ) {
 		$text .= time_ago($new_time);
 	}
 	return $text;
 }
 
-if (isset($_POST["item"]) && $_POST["item"] !== "") {
+if ( isset($_POST["item"]) && $_POST["item"] !== "" ) {
 	$full_path = $_SERVER["DOCUMENT_ROOT"] . "/cloud/" .  $_POST["item"];
-	if (is_file($full_path)) {
+	if ( is_file($full_path) ) {
 	    unlink($full_path);
 	}
 	return;
@@ -137,7 +137,7 @@ function delete_item(item) {
 		<?php
 		$listing = scandir("uploads/");
 		for ($i = 2; $i < count($listing); $i++) {
-		    if ($listing[$i] !== "index.php") { 
+		    if ( $listing[$i] !== "index.php" ) { 
 		    $link = "uploads/" . $listing[$i];
 		    $item = "uploads/" . $listing[$i];
 		?>
